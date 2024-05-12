@@ -61,7 +61,7 @@ public class Main {
         System.out.printf("За %s минут машина произвела %s штук бутылок\n", machinePerformanceFor20MinuteTime, machinePerformanceFor20MinuteAmount);
         System.out.printf("За %s день машина произвела %s штук бутылок\n", machinePerformanceFor1DayTime / 1440, machinePerformanceFor1DayAmount);
         System.out.printf("За %s дня машина произвела %s штук бутылок\n", machinePerformanceFor3DaysTime / 1440, machinePerformanceFor3DaysAmount);
-        System.out.printf("За %s день машина произвела %s штук бутылок\n", machinePerformanceFor1MonthTime / 1440, machinePerformanceFor1MonthAmount);
+        System.out.printf("За %s месяц машина произвела %s штук бутылок\n", machinePerformanceFor1MonthTime / 1440 / 31, machinePerformanceFor1MonthAmount);
         System.out.println();
 
         // Task 5
@@ -103,14 +103,14 @@ public class Main {
         float salaryMonthlyDenis = 83_690F;
         float salaryMonthlyKristina = 76_230F;
         int salaryIncreasePercent = 10;
-        float salaryAnnualIncreaseMasha = ( salaryMonthlyMasha / 100 * salaryIncreasePercent) * 12;
-        float salaryAnnualAfterIncreaseMasha = salaryMonthlyMasha * 12 + salaryAnnualIncreaseMasha;
-        float salaryAnnualIncreaseDenis = ( salaryMonthlyDenis / 100 * salaryIncreasePercent) * 12;
-        float salaryAnnualAfterIncreaseDenis = salaryMonthlyDenis * 12 + salaryAnnualIncreaseDenis;
-        float salaryAnnualIncreaseKristina = ( salaryMonthlyKristina / 100 * salaryIncreasePercent) * 12;
-        float salaryAnnualAfterIncreaseKristina = salaryMonthlyKristina * 12 + salaryAnnualIncreaseKristina;
-        System.out.printf("Маша теперь получает %s рублей. Годовой доход вырос на %s рублей\n", salaryAnnualAfterIncreaseMasha, salaryAnnualIncreaseMasha);
-        System.out.printf("Денис теперь получает %s рублей. Годовой доход вырос на %s рублей\n", salaryAnnualAfterIncreaseDenis, salaryAnnualIncreaseDenis);
-        System.out.printf("Кристина теперь получает %s рублей. Годовой доход вырос на %s рублей\n", salaryAnnualAfterIncreaseKristina, salaryAnnualIncreaseKristina);
+        float salaryMonthlyAfterIncreaseMasha = salaryMonthlyMasha + ( salaryMonthlyMasha / 100 * salaryIncreasePercent);
+        float salaryAnnualDifferentMasha = ( salaryMonthlyAfterIncreaseMasha - salaryMonthlyMasha ) * 12;
+        float salaryMonthlyAfterIncreaseDenis = salaryMonthlyDenis + ( salaryMonthlyDenis / 100 * salaryIncreasePercent);
+        float salaryAnnualDifferentDenis = ( salaryMonthlyAfterIncreaseDenis - salaryMonthlyDenis ) * 12;
+        float salaryMonthlyAfterIncreaseKristina = salaryMonthlyKristina + ( salaryMonthlyKristina / 100 * salaryIncreasePercent);
+        float salaryAnnualDifferentKristina = ( salaryMonthlyAfterIncreaseKristina - salaryMonthlyKristina ) * 12;
+        System.out.printf("Маша теперь получает %s рублей. Годовой доход вырос на %s рублей\n", salaryMonthlyAfterIncreaseMasha, salaryAnnualDifferentMasha);
+        System.out.printf("Денис теперь получает %s рублей. Годовой доход вырос на %s рублей\n", salaryMonthlyAfterIncreaseDenis, salaryAnnualDifferentDenis);
+        System.out.printf("Кристина теперь получает %s рублей. Годовой доход вырос на %s рублей\n", salaryMonthlyAfterIncreaseKristina, salaryAnnualDifferentKristina);
     }
 }
